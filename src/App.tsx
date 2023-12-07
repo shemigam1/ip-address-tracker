@@ -1,24 +1,16 @@
 import { FC } from 'react'
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
-// import { Icon } from 'leaflet'
-import "./style.css";
+import Map from './components/Map';
+import { Bg } from './components/Background';
 
 const App: FC = () => {
   return (
-    <div>
-      <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
-        <TileLayer
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Marker position={[51.505, -0.09]}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
-      </MapContainer>
+    <div className="w-screen h-screen">
+
+      <Bg />
+      <Map />
+
     </div>
-  );
+  )
 };
 
 
